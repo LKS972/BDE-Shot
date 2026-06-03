@@ -135,9 +135,25 @@
   /* ─────────────────────────────────────────────
      NAVBAR
   ───────────────────────────────────────────── */
-  const navbar = document.getElementById('navbar');
+  const navbar   = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+
+  /* Clone nav links into the mobile overlay */
+  navLinks.querySelectorAll('li').forEach(li => {
+    const clone = li.cloneNode(true);
+    mobileOverlay.appendChild(clone);
+  });
+
+  function closeMenu() {
+    mobileOverlay.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.querySelectorAll('span').forEach(s => {
+      s.style.transform = '';
+      s.style.opacity = '';
+    });
+  }
 
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -145,7 +161,7 @@
   }, { passive: true });
 
   hamburger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
+    const open = mobileOverlay.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', open);
     hamburger.querySelectorAll('span').forEach((s, i) => {
       if (open) {
@@ -159,15 +175,12 @@
     });
   });
 
+  /* Fermer au clic sur un lien (overlay + navbar) */
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.querySelectorAll('span').forEach(s => {
-        s.style.transform = '';
-        s.style.opacity = '';
-      });
-    });
+    link.addEventListener('click', closeMenu);
+  });
+  mobileOverlay.addEventListener('click', e => {
+    if (e.target.classList.contains('nav-link')) closeMenu();
   });
 
   function updateActiveLink() {
