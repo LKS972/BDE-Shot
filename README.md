@@ -1,17 +1,17 @@
-# 🔐 BDE SHOT — Site Officiel
+# > BDE SHOT — Site Officiel
 
 > **Solidarité · Humour · Opportunités · Tech**  
 > Bureau des Étudiants de Guardia Cybersecurity School · Quest Education 2026
 
 ---
 
-## 📋 Présentation
+## > Présentation
 
 Site web officiel du **BDE SHOT**, le bureau des étudiants de Guardia Cybersecurity School. Il centralise les informations sur l'équipe, les événements, et les valeurs du BDE.
 
 ---
 
-## 🗂️ Structure du projet
+## > Structure du projet
 
 ```
 site BDE/
@@ -24,7 +24,7 @@ site BDE/
 
 ---
 
-## 🚀 Lancement
+## > Lancement
 
 Aucun serveur requis. Ouvrir directement dans un navigateur :
 
@@ -40,11 +40,11 @@ python3 -m http.server 8080
 npx serve .
 ```
 
-> ⚠️ Certaines fonctionnalités (fonts Google, CSP) nécessitent une connexion internet ou un serveur local.
+>>> Certaines fonctionnalités (fonts Google, CSP) nécessitent une connexion internet ou un serveur local.
 
 ---
 
-## 🎨 Design System
+## > Design System
 
 ### Palette de couleurs
 | Rôle | Valeur | Aperçu |
@@ -65,7 +65,7 @@ npx serve .
 
 ---
 
-## 👥 L'équipe — Le Roster
+## > L'équipe — Le Roster
 
 | Poste | Nom |
 |---|---|
@@ -82,7 +82,7 @@ npx serve .
 
 ---
 
-## 📅 Événement phare — BDE Days 2026
+## > Événement phare — BDE Days 2026
 
 ### Round 01 · Le Warm-Up (Jour 01)
 - Ouverture & lancement de la tombola
@@ -99,7 +99,7 @@ npx serve .
 
 ---
 
-## 📬 Contact
+## > Contact
 
 **Email :** ljourdain@guardiaschool.fr & lcourdier@guardiaschool.fr  
 **Organisateur :** Léandre Jourdain, Président du BDE SHOT & Lukas COURDIER Vice-Président du BDE SHOT 
@@ -107,7 +107,7 @@ npx serve .
 
 ---
 
-## 📄 Licence
+## > Licence
 
 © 2025–2026 BDE SHOT · Tous droits réservés.  
 Usage interne uniquement — ne pas distribuer sans autorisation.
