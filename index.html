@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none';" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>BDE SHOT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Matrix pour le fond -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- Particle pour le fond -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── NAVIGATION ── -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-brand">
+      <span class="nav-logo-text">BDE<span class="gold">SHOT</span></span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none"><a href="#hero" role="menuitem" class="nav-link">Accueil</a></li>
+      <li role="none"><a href="#about" role="menuitem" class="nav-link">À propos</a></li>
+      <li role="none"><a href="#values" role="menuitem" class="nav-link">Valeurs</a></li>
+      <li role="none"><a href="#bde-days" role="menuitem" class="nav-link">BDE Days</a></li>
+      <li role="none"><a href="#events" role="menuitem" class="nav-link">Agenda</a></li>
+      <li role="none"><a href="#team" role="menuitem" class="nav-link">Membres</a></li>
+      <li role="none"><a href="#contact" role="menuitem" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-text">SYSTÈME ACTIF</span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero" aria-label="Accueil">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-scanline" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Bureau Des Étudiants — Guardia Cybersecurity School
+      </div>
+
+      <h1 class="hero-title" aria-label="BDE SHOT">
+        <span class="title-bde" data-glitch="BDE">BDE</span>
+        <span class="title-shot" data-glitch="SHOT">SHOT</span>
+      </h1>
+
+      <p class="hero-sub">
+        <span class="typewriter" id="typewriter"></span><span class="cursor-blink" aria-hidden="true">█</span>
+      </p>
+
+      <div class="hero-acronym" aria-label="Solidarité Humour Opportunités Tech">
+        <div class="acro-item" data-delay="0">
+          <span class="acro-letter">S</span>
+          <span class="acro-word">olidarité</span>
+        </div>
+        <div class="acro-sep" aria-hidden="true">◆</div>
+        <div class="acro-item" data-delay="1">
+          <span class="acro-letter">H</span>
+          <span class="acro-word">umour</span>
+        </div>
+        <div class="acro-sep" aria-hidden="true">◆</div>
+        <div class="acro-item" data-delay="2">
+          <span class="acro-letter">O</span>
+          <span class="acro-word">pportunités</span>
+        </div>
+        <div class="acro-sep" aria-hidden="true">◆</div>
+        <div class="acro-item" data-delay="3">
+          <span class="acro-letter">T</span>
+          <span class="acro-word">ech</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary" aria-label="Découvrir le BDE SHOT">
+          <span class="btn-text">Accéder au système</span>
+          <span class="btn-icon" aria-hidden="true">▶</span>
+        </a>
+        <a href="#events" class="btn-secondary" aria-label="Voir les événements">
+          <span class="btn-text">Événements</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats" aria-label="Statistiques">
+      <div class="stat-card">
+        <span class="stat-num" data-target="7">0</span>
+        <span class="stat-label">Membres</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="2">0</span>
+        <span class="stat-label">Événements</span>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="section-header">
+      <div class="section-tag">01 / À propos</div>
+      <h2 id="about-title" class="section-title">Qui sommes-nous <span class="gold">?</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="about-lead">
+          Le <strong class="gold">BDE SHOT</strong> est le bureau des étudiants de Guardia Cybersecurity School.
+          Nous fédérons une communauté passionnée autour de la sécurité informatique, des défis techniques
+          et de la vie étudiante.
+        </p>
+        <p>
+          Chaque année, nous organisons des événements,
+          des compétitions CTF et des ateliers hands-on pour monter en compétences ensemble.
+        </p>
+        <p>
+          Notre objectif : <em class="gold">Passer une bonne année avec vous</em>.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Événements</span>
+          <span class="tag">Collaboration</span>
+          <span class="tag">Club</span>
+          <span class="tag">CTF</span>
+          <span class="tag">Challenges OSINT</span>
+          <span class="tag">Crypto</span>
+          <span class="tag">Reverse</span>
+        </div>
+      </div>
+
+      <div class="about-terminal reveal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="t-dot red"></span>
+          <span class="t-dot orange"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">shot@bde:~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body" aria-label="Terminal de présentation">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ── -->
+  <section id="values" aria-labelledby="values-title">
+    <div class="section-header">
+      <div class="section-tag">02 / Nos valeurs</div>
+      <h2 id="values-title" class="section-title">Ce qui nous <span class="gold">définit</span></h2>
+    </div>
+
+    <div class="values-grid">
+      <article class="value-card reveal" aria-labelledby="val-s">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 35 Q30 20 40 35 Q30 50 20 35Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="30" cy="30" r="4" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="value-letter" aria-hidden="true">S</span>
+        <h3 id="val-s" class="value-title">Solidarité</h3>
+        <p class="value-desc">Entraide, partage de connaissances et soutien mutuel. Si jamais vous avez besoin de quelque chose n'hesitez pas.</p>
+        <div class="value-bar" aria-hidden="true"><div class="value-fill" style="width:92%"></div></div>
+      </article>
+
+      <article class="value-card reveal" aria-labelledby="val-h">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 28 Q25 20 30 28 Q35 36 40 28" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <circle cx="23" cy="24" r="2" fill="currentColor"/>
+            <circle cx="37" cy="24" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="value-letter" aria-hidden="true">H</span>
+        <h3 id="val-h" class="value-title">Humour</h3>
+        <p class="value-desc">Parce qu'on se fait chier si on ne rigole pas. Vaut mieux un bon BDE plutot qu'un BDE sans humour. <br> <br></p>
+        <div class="value-bar" aria-hidden="true"><div class="value-fill" style="width:88%"></div></div>
+      </article>
+
+      <article class="value-card reveal" aria-labelledby="val-o">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M18 30 L26 22 L34 30 L26 38 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M32 22 L40 30 L32 38" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <span class="value-letter" aria-hidden="true">O</span>
+        <h3 id="val-o" class="value-title">Opportunités</h3>
+        <p class="value-desc">Réseau professionnel, stages, alternances, conférences. L'objectif, c'est de vous ouvrir les portes du secteur professionnel.</p>
+        <div class="value-bar" aria-hidden="true"><div class="value-fill" style="width:95%"></div></div>
+      </article>
+
+      <article class="value-card reveal" aria-labelledby="val-t">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="18" y="22" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M24 38 L24 42 M36 38 L36 42 M20 42 L40 42" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="30" cy="30" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="value-letter" aria-hidden="true">T</span>
+        <h3 id="val-t" class="value-title">Tech</h3>
+        <p class="value-desc">On est vraiment obliger d'expliquer le T > Tech ?. <br><br><br></p>
+        <div class="value-bar" aria-hidden="true"><div class="value-fill" style="width:98%"></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── BDE DAYS HIGHLIGHT ── -->
+  <section id="bde-days" aria-labelledby="bde-days-title">
+    <div class="section-header">
+      <div class="section-tag">03 / Événement phare · Quest Education 2026</div>
+      <h2 id="bde-days-title" class="section-title">BDE <span class="gold">DAYS</span></h2>
+      <p class="section-sub">Entre deux manettes et un comptoir.<br>Deux jours pour jouer, gagner et trinquer comme il faut.</p>
+    </div>
+
+    <div class="bde-days-intro reveal">
+      <p>Tournois, tombola, olympiades, escape game — et la soirée qui va avec. On a tout prévu, à vous de venir.</p>
+      <p class="bde-days-orga">Organisé par le <strong class="gold">BDE SHOT</strong>,</p>
+    </div>
+
+    <div class="rounds-grid">
+
+      <!-- Round 01 -->
+      <article class="round-card reveal" aria-labelledby="round01-title">
+        <div class="round-header">
+          <div class="round-badge">ROUND 01</div>
+          <h3 id="round01-title" class="round-title">LE WARM-UP <span class="round-day">— JOUR 01</span></h3>
+          <p class="round-sub">Ça veut dire échauffement pour ceux qui ne savent pas parler anglais</p>
+        </div>
+        <div class="round-body">
+          <div class="schedule-item">
+            <span class="sch-time">9H00</span>
+            <div class="sch-content">
+              <strong>Ouverture &amp; Lancement de la tombola</strong>
+              <span>On accueille tout le monde, ouverture des stands — premiers tickets en vente.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">9H30</span>
+            <div class="sch-content">
+              <strong>Inscriptions au tournoi de jeux vidéo</strong>
+              <span>Sondage « quel jeu en premier ? » + annonce de la sortie bar et du week-end d'intégration.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">10H30</span>
+            <div class="sch-content">
+              <strong>Créneaux des clubs — 30 min chacun</strong>
+              <span>Chaque club se présente en salle Minecraft. PC à disposition en continu.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">12H00</span>
+            <div class="sch-content">
+              <strong>Pause déj'</strong>
+              <span>On souffle et on mange — partenariat resto possible.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">14H–17H</span>
+            <div class="sch-content">
+              <strong>Présentation du BDE SHOT</strong>
+              <span>Qui on est, ce qu'on fait, comment on anime le campus — et toutes nos idées pour la suite.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">17H–17H30</span>
+            <div class="sch-content">
+              <strong>Sondage, deuxième manche &amp; résultats de la tombola</strong>
+              <span>Vote final sur les activités puis tirage au sort — croisez les doigts.</span>
+            </div>
+          </div>
+          <div class="schedule-item highlight">
+            <span class="sch-time">Le soir</span>
+            <div class="sch-content">
+              <strong>Soirée au bar partenaire</strong>
+              <span>Premier round terminé — on enchaîne au bar désigné par le sondage.</span>
+            </div>
+          </div>
+        </div>
+        <div class="round-footer">
+          <span class="tl-tag">Tombola</span>
+          <span class="tl-tag">Tournoi JV</span>
+          <span class="tl-tag">Buvette</span>
+          <span class="tl-tag">Soirée bar</span>
+        </div>
+      </article>
+
+      <!-- Round 02 -->
+      <article class="round-card reveal" aria-labelledby="round02-title">
+        <div class="round-header">
+          <div class="round-badge gold-badge">ROUND 02</div>
+          <h3 id="round02-title" class="round-title">LA REVANCHE <span class="round-day">— JOUR 02</span></h3>
+          <p class="round-sub">Aujourd'hui on joue collectif : épreuves, énigmes et cohésion.</p>
+        </div>
+        <div class="round-body">
+          <div class="schedule-item">
+            <span class="sch-time">9H–12H</span>
+            <div class="sch-content">
+              <strong>Olympiades × BDE Gaming</strong>
+              <span>Matinée d'épreuves en équipes : défis, mini-jeux et classement à la clé.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">12H–14H</span>
+            <div class="sch-content">
+              <strong>Pause déj'</strong>
+              <span>On recharge les batteries avant l'après-midi.</span>
+            </div>
+          </div>
+          <div class="schedule-item">
+            <span class="sch-time">14H–17H</span>
+            <div class="sch-content">
+              <strong>Escape Game</strong>
+              <span>Sessions par équipes : énigmes, coopération et chrono. Que le meilleur groupe gagne.</span>
+            </div>
+          </div>
+          <div class="schedule-item highlight">
+            <span class="sch-time">Final</span>
+            <div class="sch-content">
+              <strong>Clôture — temps fort commun</strong>
+              <span>Un dernier moment avec tous les groupes d'écoles pour finir soudés.</span>
+            </div>
+          </div>
+        </div>
+        <div class="round-footer">
+          <span class="tl-tag">Olympiades</span>
+          <span class="tl-tag">Escape Game</span>
+          <span class="tl-tag">BDE Gaming</span>
+          <span class="tl-tag">Cohésion</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="bde-days-note reveal">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:.4rem"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M8 7v4M8 5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Horaires indicatifs — à ajuster avec les partenaires (BDE Gaming, escape game, resto). Confirmer les résas et caler le nombre d'équipes avant le jour J.
+    </p>
+  </section>
+
+  <!-- ── EVENTS ── -->
+  <section id="events" aria-labelledby="events-title">
+    <div class="section-header">
+      <div class="section-tag">04 / Agenda annuel</div>
+      <h2 id="events-title" class="section-title">Agenda <span class="gold">2025–2026</span></h2>
+    </div>
+
+    <div class="timeline" role="list">
+
+      <article class="timeline-item reveal" role="listitem">
+        <div class="timeline-marker" aria-hidden="true">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="tl-meta">
+            <span class="tl-date">2026</span>
+            <span class="tl-badge gala">BDE Days</span>
+          </div>
+          <h3 class="tl-title">BDE Days — Quest Education</h3>
+          <p class="tl-desc">L'événement phare : tournois, tombola, olympiades, escape game et soirée bar. Deux jours pour fédérer toute la promo.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">2 jours</span>
+            <span class="tl-tag">Tous niveaux</span>
+            <span class="tl-tag">Soirée incluse</span>
+          </div>
+        </div>
+      </article>
+<!--
+      <article class="timeline-item reveal" role="listitem">
+        <div class="timeline-marker" aria-hidden="true">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="tl-meta">
+            <span class="tl-date">À venir</span>
+            <span class="tl-badge ctf">CTF</span>
+          </div>
+          <h3 class="tl-title">SHOT CTF</h3>
+          <p class="tl-desc">Compétition interne de Capture The Flag. Catégories : Web, Crypto, Forensics, Reverse, OSINT. Tous niveaux.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">24h</span>
+            <span class="tl-tag">Équipes de 4</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal" role="listitem">
+        <div class="timeline-marker" aria-hidden="true">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="tl-meta">
+            <span class="tl-date">À venir</span>
+            <span class="tl-badge conf">Conférence</span>
+          </div>
+          <h3 class="tl-title">Cybersec Talk</h3>
+          <p class="tl-desc">Intervention de professionnels du secteur — Red Team, SOC, Bug Bounty. Networking et retours d'expérience.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">Soirée</span>
+            <span class="tl-tag">Ouvert à tous</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal" role="listitem">
+        <div class="timeline-marker" aria-hidden="true">
+          <div class="marker-dot"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="tl-meta">
+            <span class="tl-date">À venir</span>
+            <span class="tl-badge workshop">Workshop</span>
+          </div>
+          <h3 class="tl-title">Atelier Pentest Web</h3>
+          <p class="tl-desc">Hands-on sur un environnement de lab dédié. OWASP Top 10, SQL injection, XSS, CSRF — pratique et pédagogie.</p>
+          <div class="tl-tags">
+            <span class="tl-tag">2 sessions</span>
+            <span class="tl-tag">Lab virtuel</span>
+          </div>
+        </div>
+      </article> -->
+
+    </div>
+  </section>
+
+  <!-- ── TEAM ── -->
+  <section id="team" aria-labelledby="team-title">
+    <div class="section-header">
+      <div class="section-tag">05 / Bureau</div>
+      <h2 id="team-title" class="section-title">Le roster <span class="gold">SHOT</span></h2>
+    </div>
+
+    <!-- Capitaine -->
+    <div class="team-captain-wrap reveal">
+      <article class="team-card team-captain" aria-labelledby="member-prez">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="captain-crown" aria-hidden="true">P1 · CAPITAINE</div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">01</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-prez" class="team-name">Léandre Jourdain</h3>
+          <span class="team-role">Président — Direction BDE SHOT</span>
+          <p class="team-bio">Coordination générale. Tranche les décisions, valide en dernier ressort et représente le BDE SHOT auprès de Quest Education et des partenaires.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Leadership</span>
+            <span class="skill-tag">Stratégie</span>
+            <span class="skill-tag">Représentation</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Bureau -->
+    <div class="team-grid">
+
+      <article class="team-card reveal" aria-labelledby="member-sec">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">02</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-sec" class="team-name">Lukas Courdier</h3>
+          <span class="team-role">Vice-Président - Secrétaire</span>
+          <p class="team-bio">L'administratif. Comptes-rendus, convocations, archives et suivi des décisions.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Admin</span>
+            <span class="skill-tag">Coordination</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" aria-labelledby="member-treso">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">03</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-treso" class="team-name">Mathieu Velay</h3>
+          <span class="team-role">Trésorier</span>
+          <p class="team-bio">Les sous. Tient le budget, valide les dépenses et gère la comptabilité du BDE.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Budget</span>
+            <span class="skill-tag">Compta</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" aria-labelledby="member-event">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">04</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-event" class="team-name">Hachimi Sefiane</h3>
+          <span class="team-role">Resp. Événementiel</span>
+          <p class="team-bio">Le terrain. Conçoit les events, gère la logistique et le planning de chaque action.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Logistique</span>
+            <span class="skill-tag">Planning</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" aria-labelledby="member-part">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">05</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-part" class="team-name">Alexandre Poulain</h3>
+          <span class="team-role">Resp. Partenariats</span>
+          <p class="team-bio">Les partenaires. Bars, sponsors, écoles — négociations et conventions.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Partenariats</span>
+            <span class="skill-tag">Négociation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" aria-labelledby="member-asso">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">06</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-asso" class="team-name">Balthazar Remy-De-Cournon</h3>
+          <span class="team-role">Resp. Vie Associative</span>
+          <p class="team-bio">Les assos. Fait le lien avec les clubs et anime la vie associative du campus.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Clubs</span>
+            <span class="skill-tag">Animation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" aria-labelledby="member-com">
+        <div class="card-glow" aria-hidden="true"></div>
+        <div class="team-avatar" aria-hidden="true">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 72 Q16 52 40 52 Q64 52 64 72" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="avatar-badge" aria-hidden="true">07</div>
+        </div>
+        <div class="team-info">
+          <h3 id="member-com" class="team-name">Jérémy Allier</h3>
+          <span class="team-role">Resp. Communication</span>
+          <p class="team-bio">L'image. Réseaux, affiches, annonces et visibilité du BDE SHOT.</p>
+          <div class="team-skills">
+            <span class="skill-tag">Réseaux</span>
+            <span class="skill-tag">Branding</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Renforts -->
+    <div class="renforts-wrap reveal">
+      <div class="renforts-label">LES RENFORTS · MAIN D'ŒUVRE</div>
+      <p class="renforts-desc">Montage, démontage, gestion des stands et coup de main sur place pendant les events.</p>
+      <div class="renforts-grid">
+        <div class="renfort-item">Matys Mancel</div>
+        <div class="renfort-item">Quentin Legrand</div>
+        <div class="renfort-item">Ihsane Montagné</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="section-header">
+      <div class="section-tag">06 / Contact</div>
+      <h2 id="contact-title" class="section-title">Nous <span class="gold">rejoindre</span></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="contact-lead">Tu es étudiant en cybersécurité et tu veux t'impliquer ? Rejoins le BDE SHOT et fais partie de l'aventure.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16v16H4V4zm0 4l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val">lcpetit@questeducation.fr</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Localisation</div>
+              <div class="contact-val">22 Terr. Bellini, 92800 Puteaux</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" stroke="currentColor" stroke-width="1" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Discord</div>
+              <div class="contact-val">À venir ...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-logo-wrap reveal">
+        <img src="logo_bde.png" alt="Logo BDE SHOT" class="contact-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">BDE<span class="gold">SHOT</span></span>
+        <p class="footer-tagline">Solidarité · Humour · Opportunités · Tech</p>
+      </div>
+      <div class="footer-links" role="navigation" aria-label="Liens du pied de page">
+        <a href="#hero" class="footer-link">Accueil</a>
+        <a href="#about" class="footer-link">À propos</a>
+        <a href="#values" class="footer-link">Valeurs</a>
+        <a href="#bde-days" class="footer-link">BDE Days</a>
+        <a href="#events" class="footer-link">Événements</a>
+        <a href="#team" class="footer-link">Membres</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025–2026 BDE SHOT — Tous droits réservés</span>
+      <span class="footer-sec">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" aria-hidden="true">
+          <path d="M8 1L2 4v4c0 3.31 2.58 6.41 6 7.16C14 14.41 14 11.31 14 8V4L8 1z" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Site sécurisé
+      </span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
