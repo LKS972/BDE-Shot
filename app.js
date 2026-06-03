@@ -200,9 +200,7 @@
   ───────────────────────────────────────────── */
   const PHRASES = [
     'LKS c\'est le GOAT qui a confectionné ce site. 🥵',
-    'CTF • Pentest • Red Team • Blue Team.',
     'La cybersécurité, c\'est notre domaine fanmi.',
-    'Solidaires. Curieux. Redoutables.',
     'root@bde-shot:~# ./exploit.sh',
     'Pa konté zé an tjou poul 🐓🥚'
   ];
