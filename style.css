@@ -1446,15 +1446,19 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    background: rgba(0,0,0,.97);
-    backdrop-filter: blur(24px);
+    gap: 2.5rem;
+    background: #000;
     transform: translateX(100%);
     transition: transform .4s var(--ease-out);
-    z-index: 890;
+    z-index: 950;
   }
   .nav-links.open { transform: translateX(0); }
-  .nav-link { font-size: 1.1rem; }
+  .nav-link {
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: .18em;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--gold-light); }
 
   .about-grid,
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
