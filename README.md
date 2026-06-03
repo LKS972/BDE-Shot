@@ -7,40 +7,7 @@
 
 ## 📋 Présentation
 
-Site web officiel du **BDE SHOT**, le bureau des étudiants de la filière cybersécurité de Guardia Cybersecurity School. Conçu avec une esthétique **cyberpunk noir & or**, il centralise les informations sur l'équipe, les événements, et les valeurs du BDE.
-
----
-
-## ✨ Fonctionnalités
-
-### Animations
-| Effet | Description |
-|---|---|
-| **Matrix Rain** | Pluie de caractères dorés en arrière-plan (canvas) |
-| **Particules dorées** | Particules flottantes générées dynamiquement (canvas) |
-| **Glitch titre** | Effet glitch RGB sur "BDE SHOT" avec décalages couleur |
-| **Typewriter** | Phrases cybersec qui s'écrivent/s'effacent en boucle |
-| **Tilt 3D** | Rotation perspective des cartes au survol de la souris |
-| **Terminal animé** | Terminal qui se tape ligne par ligne au scroll |
-| **Compteurs** | Animation des chiffres au scroll (IntersectionObserver) |
-| **Scroll Reveal** | Apparition fluide des sections au défilement |
-
-### Sections
-1. **Hero** — Titre géant animé + acronyme S·H·O·T + statistiques
-2. **À propos** — Présentation + terminal interactif
-3. **Valeurs** — 4 cartes Solidarité / Humour / Opportunités / Tech
-4. **BDE Days** — Programme détaillé Round 01 & Round 02 (Quest Education 2026)
-5. **Agenda** — Timeline des événements annuels (CTF, Conférences, Workshops)
-6. **Bureau** — Roster complet de l'équipe + renforts
-7. **Contact** — Informations de contact + logo
-
-### Sécurité
-- `Content-Security-Policy` configurée en meta tag
-- `noindex, nofollow` — site non indexé par les moteurs de recherche
-- `referrer: no-referrer` — aucune fuite de référent
-- Clic droit désactivé
-- Raccourcis DevTools bloqués (F12, Ctrl+Shift+I, Ctrl+U)
-- Console JavaScript supprimée en production
+Site web officiel du **BDE SHOT**, le bureau des étudiants de Guardia Cybersecurity School. Il centralise les informations sur l'équipe, les événements, et les valeurs du BDE.
 
 ---
 
@@ -103,7 +70,7 @@ npx serve .
 | Poste | Nom |
 |---|---|
 | 🏆 Président | Léandre Jourdain |
-| Secrétaire | Lukas Courdier |
+| Vice-Président | Lukas Courdier |
 | Trésorier | Mathieu Velay |
 | Resp. Événementiel | Hachimi Sefiane |
 | Resp. Partenariats | Alexandre Poulain |
@@ -134,8 +101,8 @@ npx serve .
 
 ## 📬 Contact
 
-**Email :** lcpetit@questeducation.fr  
-**Organisateur :** Léandre Jourdain, Président du BDE SHOT  
+**Email :** ljourdain@guardiaschool.fr & lcourdier@guardiaschool.fr  
+**Organisateur :** Léandre Jourdain, Président du BDE SHOT & Lukas COURDIER Vice-Président du BDE SHOT 
 **École :** Guardia Cybersecurity School · Quest Education
 
 ---
