@@ -199,10 +199,10 @@
      TYPEWRITER
   ───────────────────────────────────────────── */
   const PHRASES = [
-    'LKS c\'est le GOAT qui a confectionné ce site. 🥵',
+    'Le GOAT qui a confectionné ce site c\'est LKS. 🥵',
     'La cybersécurité, c\'est notre domaine fanmi.',
     'root@bde-shot:~# ./exploit.sh',
-    'Pa konté zé an tjou poul 🐓🥚'
+    'Pa konté zé an tcou poul 🐓🥚'
   ];
 
   const typeEl = document.getElementById('typewriter');
