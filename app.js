@@ -199,10 +199,10 @@
      TYPEWRITER
   ───────────────────────────────────────────── */
   const PHRASES = [
-    'Le GOAT qui a confectionné ce site c\'est LKS. 🥵',
+    'LKS Il est trop fort ( c\'est celui qui a conçu ce site ). 🥵',
     'La cybersécurité, c\'est notre domaine fanmi.',
     'root@bde-shot:~# ./exploit.sh',
-    'Pa konté zé an tcou poul 🐓🥚'
+    'Pa konté zé an tchou poul 🐓🥚'
   ];
 
   const typeEl = document.getElementById('typewriter');
@@ -266,6 +266,7 @@
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = parseInt(el.dataset.target, 10);
+      el.textContent = '0';
       const duration = 1600;
       const start = performance.now();
 
