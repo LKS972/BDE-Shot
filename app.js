@@ -199,7 +199,7 @@
      TYPEWRITER
   ───────────────────────────────────────────── */
   const PHRASES = [
-    'C\'est moi j\'ai conçu le site : Lks 😝​🥵',
+    'LKS 🇲🇶​ c\'est le GOAT qui à conçu ce site 😝​🥵',
     'La cybersécurité, c\'est notre domaine fanmi.',
     'root@bde-shot:~# ./exploit.sh',
     'Pa konté zé an tchou poul 🐓🥚'
