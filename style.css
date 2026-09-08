@@ -1,4 +1,58 @@
 /* ─────────────────────────────────────────────
+   POLICES LOCALES (self-hosted, sous-ensemble latin)
+   Aucun appel vers fonts.googleapis.com / fonts.gstatic.com
+───────────────────────────────────────────── */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/orbitron-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/orbitron-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/orbitron-900.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/rajdhani-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/rajdhani-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/rajdhani-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/share-tech-mono-400.woff2') format('woff2');
+}
+
+/* ─────────────────────────────────────────────
    BDE SHOT — CODE COULEUR BY LKS
    Colors: #000 / #0a0a0a / #111  (background)
            #C9A227 / #FFD700 / #B8860B  (gold)
@@ -1500,4 +1554,14 @@ footer {
   .hero-title { gap: 0; }
   .footer-grid { flex-direction: column; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ─────────────────────────────────────────────
+   UTILITAIRES (remplacent d'anciens attributs style= inline,
+   incompatibles avec une CSP sans 'unsafe-inline')
+───────────────────────────────────────────── */
+.icon-inline {
+  display: inline;
+  vertical-align: middle;
+  margin-right: .4rem;
 }

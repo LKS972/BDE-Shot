@@ -199,7 +199,7 @@
      TYPEWRITER
   ───────────────────────────────────────────── */
   const PHRASES = [
-    'LKS 🇲🇶​ c\'est le GOAT qui à conçu ce site 😝​🥵',
+    'LKS 🇲🇶​ c\'est le GOAT qui a conçu ce site 😝​🥵',
     'La cybersécurité, c\'est notre domaine fanmi.',
     'root@bde-shot:~# ./exploit.sh',
     'Pa konté zé an tchou poul 🐓🥚'
@@ -246,7 +246,7 @@
           /* animate value bars */
           const bar = entry.target.querySelector('.value-fill');
           if (bar) {
-            const target = bar.style.width || '80%';
+            const target = bar.dataset.width || '80%';
             bar.style.setProperty('--target-width', target);
             bar.style.width = target;
           }
@@ -293,14 +293,14 @@
     { cls: 'cmd',  text: '$ whoami' },
     { cls: 'out',  text: 'bde-shot' },
     { cls: 'cmd',  text: '$ cat mission.txt' },
-    { cls: 'head', text: '[ BDE SHOT — Mission ]' },
-    { cls: 'out',  text: '→ Enacadrer les étudiants en cybersécurité' },
+    { cls: 'head', text: '[ BDE SHOT : Mission ]' },
+    { cls: 'out',  text: '→ Encadrer les étudiants en cybersécurité' },
     { cls: 'out',  text: '→ Organiser CTF, workshops & conférences' },
     { cls: 'out',  text: '→ Créer un réseau professionnel solide' },
     { cls: 'cmd',  text: '$ ls ./members/' },
     { cls: 'out',  text: 'prez/  vp-tech/  vp-com/  vp-events/' },
-    { cls: 'cmd',  text: '$ echo "Bienvenue à tous les nouveaux étduants 🎯🔫"' },
-    { cls: 'out',  text: 'Bienvenue à tous les nouveaux étduants 🎯🔫' },
+    { cls: 'cmd',  text: '$ echo "Bienvenue à tous les nouveaux étudiants 🎯🔫"' },
+    { cls: 'out',  text: 'Bienvenue à tous les nouveaux étudiants 🎯🔫' },
     { cls: 'cmd',  text: '$ _' },
   ];
 
@@ -364,7 +364,7 @@
       submitBtn.querySelector('.btn-text').textContent = 'Transmission en cours...';
 
       setTimeout(() => {
-        showFeedback('success', '[ OK ] Signal reçu — nous reviendrons vers toi rapidement.');
+        showFeedback('success', '[ OK ] Signal reçu, nous reviendrons vers toi rapidement.');
         form.reset();
         submitBtn.disabled = false;
         submitBtn.querySelector('.btn-text').textContent = 'Envoyer le signal';
