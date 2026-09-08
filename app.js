@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  /* ── Disable right-click & dev tools hints ── */
+  /*  Disable right-click & dev tools hints  */
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('keydown', e => {
     if (e.key === 'F12' ||
@@ -12,15 +12,13 @@
     }
   });
 
-  /* ── Suppress all console output in production ── */
+  /*  Suppress all console output in production  */
   const noop = () => {};
   ['log','info','warn','error','debug','dir','table','trace'].forEach(m => {
     try { console[m] = noop; } catch (_) {}
   });
 
-  /* ─────────────────────────────────────────────
-     MATRIX RAIN
-  ───────────────────────────────────────────── */
+  /* ─ MATRIX RAIN ─ */
   const matrixCanvas = document.getElementById('matrix-canvas');
   const mCtx = matrixCanvas.getContext('2d');
 
@@ -60,9 +58,7 @@
     });
   }
 
-  /* ─────────────────────────────────────────────
-     GOLD PARTICLES
-  ───────────────────────────────────────────── */
+  /* ─ GOLD PARTICLES ─ */
   const pCanvas = document.getElementById('particle-canvas');
   const pCtx = pCanvas.getContext('2d');
   let particles = [];
@@ -113,9 +109,7 @@
     particles.forEach(p => { p.update(); p.draw(); });
   }
 
-  /* ─────────────────────────────────────────────
-     ANIMATION LOOP
-  ───────────────────────────────────────────── */
+  /* ─ ANIMATION LOOP ─ */
   function animate() {
     drawMatrix();
     drawParticles();
@@ -132,9 +126,7 @@
   animate();
   window.addEventListener('resize', onResize, { passive: true });
 
-  /* ─────────────────────────────────────────────
-     NAVBAR
-  ───────────────────────────────────────────── */
+  /* ─ NAVBAR ─ */
   const navbar   = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
@@ -195,9 +187,7 @@
     });
   }
 
-  /* ─────────────────────────────────────────────
-     TYPEWRITER
-  ───────────────────────────────────────────── */
+  /* ─ TYPEWRITER ─ */
   const PHRASES = [
     'LKS 🇲🇶​ c\'est le GOAT qui a conçu ce site 😝​🥵',
     'La cybersécurité, c\'est notre domaine fanmi.',
@@ -234,9 +224,7 @@
   }
   setTimeout(typeStep, 1200);
 
-  /* ─────────────────────────────────────────────
-     SCROLL REVEAL
-  ───────────────────────────────────────────── */
+  /* ─ SCROLL REVEAL ─ */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -258,9 +246,7 @@
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ─────────────────────────────────────────────
-     COUNTER ANIMATION
-  ───────────────────────────────────────────── */
+  /* ─ COUNTER ANIMATION ─ */
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -285,9 +271,7 @@
 
   document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
 
-  /* ─────────────────────────────────────────────
-     TERMINAL ANIMATION
-  ───────────────────────────────────────────── */
+  /* ─ TERMINAL ANIMATION ─ */
   const terminalBody = document.getElementById('terminal-body');
   const TERMINAL_LINES = [
     { cls: 'cmd',  text: '$ whoami' },
@@ -335,9 +319,7 @@
 
   if (terminalBody) termObs.observe(terminalBody);
 
-  /* ─────────────────────────────────────────────
-     CONTACT FORM
-  ───────────────────────────────────────────── */
+  /* ─ CONTACT FORM ─ */
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
 
@@ -378,9 +360,7 @@
     setTimeout(() => { feedback.textContent = ''; feedback.className = 'form-feedback'; }, 5000);
   }
 
-  /* ─────────────────────────────────────────────
-     SMOOTH SCROLL FOR ANCHOR LINKS
-  ───────────────────────────────────────────── */
+  /* ─ SMOOTH SCROLL FOR ANCHOR LINKS ─ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
@@ -392,9 +372,7 @@
     });
   });
 
-  /* ─────────────────────────────────────────────
-     CIRCUIT BOARD HOVER EFFECT ON VALUE CARDS
-  ───────────────────────────────────────────── */
+  /* ─ CIRCUIT BOARD HOVER EFFECT ON VALUE CARDS ─ */
   document.querySelectorAll('.value-card, .team-card, .timeline-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
