@@ -1,0 +1,31 @@
+# Dépendances
+node_modules/
+
+# Variables d'environnement
+.env
+.env.*
+!.env.example
+
+# Build / artefacts intermédiaires
+dist/
+build/
+.cache/
+*.map
+
+# Sauvegardes et fichiers temporaires
+*.bak
+*.old
+*.orig
+*.tmp
+*~
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
