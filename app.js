@@ -246,7 +246,7 @@
           /* animate value bars */
           const bar = entry.target.querySelector('.value-fill');
           if (bar) {
-            const target = bar.style.width || '80%';
+            const target = bar.dataset.width || '80%';
             bar.style.setProperty('--target-width', target);
             bar.style.width = target;
           }
